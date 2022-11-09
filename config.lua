@@ -11,7 +11,8 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "darcula"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -42,6 +43,8 @@ lvim.keys.normal_mode["<Tab>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-Tab>"] = ":BufferLineCyclePrev<CR>"
 -- Folders Toggle [Custom]
 lvim.keys.normal_mode[","] = "<cmd>normal za<CR>"
+-- Get Out Insert Mode Quikly
+lvim.keys.insert_mode["jk"] = "<ESC>"
 -- ENDCUSTOM
 
 -- AUTOCMDS
@@ -49,6 +52,14 @@ lvim.keys.normal_mode[","] = "<cmd>normal za<CR>"
 vim.api.nvim_create_autocmd('BufWinLeave', {command='mkview'})
 vim.api.nvim_create_autocmd('BufWinEnter', {command='silent! loadview'})
 -- END AUTOCMDS
+
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.smarttab = true
+
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -92,7 +103,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {command='silent! loadview'})
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
+--lvim.builtin.notify.active = true -- DEPRECATED
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
